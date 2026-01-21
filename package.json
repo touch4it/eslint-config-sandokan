@@ -1,9 +1,9 @@
 {
-  "name": "eslint-config-sandokan",
-  "version": "0.23.0",
+  "name": "@touch4it/eslint-config-sandokan",
+  "version": "0.24.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Anuovec/eslint-config-sandokan.git"
+    "url": "https://github.com/touch4it/eslint-config-sandokan.git"
   },
   "author": "Tibor The Mad Programmer <tibor.hanesz@gmail.com>",
   "main": "index.mjs",

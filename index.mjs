@@ -507,7 +507,9 @@ export default [
       'eslint-comments/require-description': 'warn',
 
       'promise/no-multiple-resolved': 'error',
+      'promise/prefer-catch': 'error',
 
+      'import/enforce-node-protocol-usage': 'error',
       'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
       'import/newline-after-import': 'warn',
       'import/no-amd': 'error',
@@ -648,6 +650,7 @@ export default [
       '@stylistic/lines-between-class-members': 'off',
       '@stylistic/padding-line-between-statements': 'off',
       '@stylistic/no-mixed-operators': 'off',
+      '@stylistic/curly-newline': 'off',
       '@typescript-eslint/no-unnecessary-type-parameters': 'off',
       '@typescript-eslint/no-deprecated': 'off',
       '@typescript-eslint/no-restricted-types': 'off',

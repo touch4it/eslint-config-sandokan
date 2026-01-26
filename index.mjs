@@ -692,6 +692,7 @@ export default [
       ],
 
       'sonarjs/function-return-type': 'off',
+      'prefer-import-meta-properties': 'error',
     },
   },
   {

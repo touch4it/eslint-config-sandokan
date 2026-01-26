@@ -6,6 +6,7 @@
     "url": "https://github.com/touch4it/eslint-config-sandokan.git"
   },
   "author": "Tibor The Mad Programmer <tibor.hanesz@gmail.com>",
+  "maintainer": "Roman Páleník <roman.palenik@touch4it.com>",
   "main": "index.mjs",
   "files": [
     "index.js",
@@ -27,7 +28,7 @@
     "eslint-plugin-prettier": "5.2.6",
     "eslint-plugin-promise": "7.1.0",
     "eslint-plugin-react": "7.35.0",
-    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-regexp": "2.6.0",
     "eslint-plugin-sonarjs": "3.0.2",
     "eslint-plugin-sort-destructure-keys": "2.0.0",

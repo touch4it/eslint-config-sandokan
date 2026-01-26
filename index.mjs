@@ -243,6 +243,8 @@ export default [
       'jest/require-to-throw-message': 'error',
       'jest/require-top-level-describe': 'warn',
       'testing-library/prefer-explicit-assert': ['error', { assertion: 'toBeInTheDocument' }],
+      'testing-library/no-test-id-queries': 'error',
+      "testing-library/prefer-user-event-setup": 'error',
     },
   },
   perfectionist.configs['recommended-alphabetical'],

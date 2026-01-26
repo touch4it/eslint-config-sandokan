@@ -690,6 +690,8 @@ export default [
           allowDefaultCaseForExhaustiveSwitch: true,
         },
       ],
+
+      'sonarjs/function-return-type': 'off',
     },
   },
   {

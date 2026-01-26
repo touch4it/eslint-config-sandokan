@@ -683,6 +683,13 @@ export default [
       '@typescript-eslint/sort-type-constituents': 'off',
 
       'promise/spec-only': 'error',
+
+      '@typescript-eslint/switch-exhaustiveness-check': [
+        'error',
+        {
+          allowDefaultCaseForExhaustiveSwitch: true,
+        },
+      ],
     },
   },
   {

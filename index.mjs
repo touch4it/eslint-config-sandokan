@@ -282,6 +282,7 @@ export default [
       '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
       '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'warn',
       '@typescript-eslint/sort-type-constituents': 'warn',
+      '@typescript-eslint/strict-void-return': 'error',
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
       'no-restricted-imports': 'off',
@@ -653,8 +654,9 @@ export default [
       '@stylistic/padding-line-between-statements': 'off',
       '@stylistic/no-mixed-operators': 'off',
       '@stylistic/curly-newline': 'off',
+      '@stylistic/type-named-tuple-spacing': 'off',
+      '@stylistic/type-generic-spacing': 'off',
       '@typescript-eslint/no-unnecessary-type-parameters': 'off',
-      '@typescript-eslint/no-deprecated': 'off',
       '@typescript-eslint/no-restricted-types': 'off',
 
       'import/default': 'off',
@@ -674,6 +676,7 @@ export default [
       // Error on routes that contains word password
       'sonarjs/no-hardcoded-passwords': 'off',
       'sonarjs/elseif-without-else': 'error',
+      'sonarjs/deprecation': 'off',
 
       '@typescript-eslint/no-unsafe-type-assertion': ['error'],
 

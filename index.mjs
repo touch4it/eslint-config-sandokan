@@ -243,6 +243,8 @@ export default [
       'jest/require-to-throw-message': 'error',
       'jest/require-top-level-describe': 'warn',
       'testing-library/prefer-explicit-assert': ['error', { assertion: 'toBeInTheDocument' }],
+      'testing-library/no-test-id-queries': 'error',
+      "testing-library/prefer-user-event-setup": 'error',
     },
   },
   perfectionist.configs['recommended-alphabetical'],
@@ -507,7 +509,9 @@ export default [
       'eslint-comments/require-description': 'warn',
 
       'promise/no-multiple-resolved': 'error',
+      'promise/prefer-catch': 'error',
 
+      'import/enforce-node-protocol-usage': 'error',
       'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
       'import/newline-after-import': 'warn',
       'import/no-amd': 'error',
@@ -648,6 +652,7 @@ export default [
       '@stylistic/lines-between-class-members': 'off',
       '@stylistic/padding-line-between-statements': 'off',
       '@stylistic/no-mixed-operators': 'off',
+      '@stylistic/curly-newline': 'off',
       '@typescript-eslint/no-unnecessary-type-parameters': 'off',
       '@typescript-eslint/no-deprecated': 'off',
       '@typescript-eslint/no-restricted-types': 'off',

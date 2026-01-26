@@ -320,6 +320,7 @@ export default [
       '@typescript-eslint/object-curly-spacing': 'off',
       'padding-line-between-statements': 'off',
       '@typescript-eslint/padding-line-between-statements': 'off',
+      '@typescript-eslint/no-import-type-side-effects': 'error',
 
       camelcase: 'off',
       'no-async-promise-executor': 'error',
@@ -520,6 +521,8 @@ export default [
       'import/no-unresolved': 'off',
       'import/no-webpack-loader-syntax': 'error',
       'import/no-namespace': 'warn',
+       // off because its in conflict with @typescript-eslint/no-import-type-side-effects
+      'import/consistent-type-specifier-style': 'off',
       'import/order': [
         'error',
         {

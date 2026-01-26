@@ -547,6 +547,14 @@ export default [
       'unicorn/no-null': 'off',
       'unicorn/switch-case-braces': ['error', 'avoid'],
       'unicorn/no-useless-undefined': 'off',
+      'unicorn/prefer-import-meta-properties': 'error',
+      'unicorn/prefer-global-this': 'off',
+      'unicorn/prevent-abbreviations': [
+        'error',
+        {
+          ignore: ['param', 'Params', 'err', 'props', 'i18n', 'ref', 'Ref'],
+        },
+      ],
 
       'react/hook-use-state': ['error', { allowDestructuredState: true }],
       'react/self-closing-comp': [
@@ -621,8 +629,6 @@ export default [
       'jsx-a11y/role-has-required-aria-props': 'warn',
       'jsx-a11y/role-supports-aria-props': 'warn',
 
-      'sonarjs/elseif-without-else': 'error',
-
       'prettier/prettier': ['error'],
 
       '@stylistic/jsx-quotes': 'off',
@@ -645,17 +651,10 @@ export default [
       '@typescript-eslint/no-unnecessary-type-parameters': 'off',
       '@typescript-eslint/no-deprecated': 'off',
       '@typescript-eslint/no-restricted-types': 'off',
-      'unicorn/prefer-global-this': 'off',
+
       'import/default': 'off',
       '@typescript-eslint/consistent-type-exports': 'off',
       'prefer-arrow-callback': 'off',
-
-      'unicorn/prevent-abbreviations': [
-        'error',
-        {
-          ignore: ['param', 'Params', 'err', 'props', 'i18n', 'ref', 'Ref'],
-        },
-      ],
 
       '@typescript-eslint/no-empty-object-type': 'error',
       '@typescript-eslint/no-unsafe-function-type': 'error',
@@ -666,6 +665,10 @@ export default [
       'sonarjs/todo-tag': 'off',
       'sonarjs/no-unused-vars': 'off',
       'sonarjs/no-nested-functions': 'off',
+      'sonarjs/function-return-type': 'off',
+      // Error on routes that contains word password
+      'sonarjs/no-hardcoded-passwords': 'off',
+      'sonarjs/elseif-without-else': 'error',
 
       '@typescript-eslint/no-unsafe-type-assertion': ['error'],
 
@@ -673,9 +676,6 @@ export default [
 
       // Auto fix not working in this package and conflicts with `perfectionist`
       '@typescript-eslint/member-ordering': 'off',
-
-      // Error on routes that contains word password
-      'sonarjs/no-hardcoded-passwords': 'off',
 
       // turning this off because import is sorted by rule import/order
       'perfectionist/sort-imports': 'off',
@@ -690,8 +690,6 @@ export default [
           allowDefaultCaseForExhaustiveSwitch: true,
         },
       ],
-
-      'sonarjs/function-return-type': 'off',
     },
   },
   {

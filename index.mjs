@@ -754,6 +754,16 @@ export default [
       // turning this off because import is sorted by rule import/order
       'perfectionist/sort-imports': 'off',
       'perfectionist/sort-named-imports': 'off',
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          type: 'unsorted',
+          useConfigurationIf: {
+            callingFunctionNamePattern:
+              '^(useInfiniteQuery|useSuspenseInfiniteQuery|infiniteQueryOptions|createFileRoute)$',
+          },
+        },
+      ],
       '@typescript-eslint/sort-type-constituents': 'off',
 
       'promise/spec-only': 'error',

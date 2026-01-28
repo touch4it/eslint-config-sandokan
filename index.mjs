@@ -3,8 +3,8 @@ import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 import promisePlugin from 'eslint-plugin-promise';
 import importPlugin from 'eslint-plugin-import';
 import unicornPlugin from 'eslint-plugin-unicorn';
-import _xoPlugin from 'eslint-config-xo';
-import _xoTsPlugin from 'eslint-config-xo-typescript';
+import _xoPluginOriginal from 'eslint-config-xo';
+import _xoTsPluginOriginal from 'eslint-config-xo-typescript';
 import xoBrowser from 'eslint-config-xo/browser';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
@@ -18,16 +18,27 @@ import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import eslint from '@eslint/js';
 import perfectionist from 'eslint-plugin-perfectionist';
 
+/*
+Workaround for this error
+
+```
+Oops! Something went wrong! :(
+
+ESLint: 9.38.0
+
+TypeError: Key "languageOptions": allowTrailingCommas option is only available in JSONC.
+```
+*/
 const omit = (property, {[property]: _, ...object}) => object;
 
-const xoPlugin = _xoPlugin.map(config =>
+const xoPlugin = _xoPluginOriginal.map(config =>
 	config.languageOptions?.allowTrailingCommas
 		? {...config, languageOptions: omit('allowTrailingCommas', config.languageOptions)}
 		: config,
 );
 
 
-const xoTsPlugin = _xoTsPlugin.map(config =>
+const xoTsPlugin = _xoTsPluginOriginal.map(config =>
 	config.languageOptions?.allowTrailingCommas
 		? {...config, languageOptions: omit('allowTrailingCommas', config.languageOptions)}
 		: config,

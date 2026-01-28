@@ -29,19 +29,18 @@ ESLint: 9.38.0
 TypeError: Key "languageOptions": allowTrailingCommas option is only available in JSONC.
 ```
 */
-const omit = (property, {[property]: _, ...object}) => object;
+const omit = (property, { [property]: _, ...object }) => object;
 
-const xoPlugin = _xoPluginOriginal.map(config =>
-	config.languageOptions?.allowTrailingCommas
-		? {...config, languageOptions: omit('allowTrailingCommas', config.languageOptions)}
-		: config,
+const xoPlugin = xoPluginOriginal.map((config) =>
+  config.languageOptions?.allowTrailingCommas
+    ? { ...config, languageOptions: omit('allowTrailingCommas', config.languageOptions) }
+    : config,
 );
 
-
-const xoTsPlugin = _xoTsPluginOriginal.map(config =>
-	config.languageOptions?.allowTrailingCommas
-		? {...config, languageOptions: omit('allowTrailingCommas', config.languageOptions)}
-		: config,
+const xoTsPlugin = xoTsPluginOriginal.map((config) =>
+  config.languageOptions?.allowTrailingCommas
+    ? { ...config, languageOptions: omit('allowTrailingCommas', config.languageOptions) }
+    : config,
 );
 
 /*
@@ -51,13 +50,9 @@ Workaround for this error
 TypeError: Error while loading rule 'no-irregular-whitespace': sourceCode.getAllComments is not a function
 ```
 */
-const xoTsFiltered = xoTsPlugin.filter(
-  (config) => !config.language?.startsWith('json/')
-);
+const xoTsFiltered = xoTsPlugin.filter((config) => !config.language?.startsWith('json/'));
 
-const xoFiltered = xoPlugin.filter(
-  (config) => !config.language?.startsWith('json/')
-);
+const xoFiltered = xoPlugin.filter((config) => !config.language?.startsWith('json/'));
 
 const allOurSelectors = [
   'function',
@@ -306,7 +301,7 @@ export default [
       'jest/require-top-level-describe': 'warn',
       'testing-library/prefer-explicit-assert': ['error', { assertion: 'toBeInTheDocument' }],
       'testing-library/no-test-id-queries': 'error',
-      "testing-library/prefer-user-event-setup": 'error',
+      'testing-library/prefer-user-event-setup': 'error',
     },
   },
   prettierPlugin,
@@ -589,7 +584,7 @@ export default [
       'import/no-unresolved': 'off',
       'import/no-webpack-loader-syntax': 'error',
       'import/no-namespace': 'warn',
-       // off because its in conflict with @typescript-eslint/no-import-type-side-effects
+      // off because its in conflict with @typescript-eslint/no-import-type-side-effects
       'import/consistent-type-specifier-style': 'off',
       'import/order': [
         'error',
@@ -747,6 +742,7 @@ export default [
       'sonarjs/no-hardcoded-passwords': 'off',
       'sonarjs/elseif-without-else': 'error',
       'sonarjs/deprecation': 'off',
+      'sonarjs/no-nested-conditional': 'off',
 
       '@typescript-eslint/no-unsafe-type-assertion': ['error'],
 

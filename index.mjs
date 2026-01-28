@@ -3,8 +3,8 @@ import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 import promisePlugin from 'eslint-plugin-promise';
 import importPlugin from 'eslint-plugin-import';
 import unicornPlugin from 'eslint-plugin-unicorn';
-import xoPlugin from 'eslint-config-xo';
-import xoTsPlugin from 'eslint-config-xo-typescript';
+import xoPluginOriginal from 'eslint-config-xo';
+import xoTsPluginOriginal from 'eslint-config-xo-typescript';
 import xoBrowser from 'eslint-config-xo/browser';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
@@ -17,6 +17,47 @@ import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import eslint from '@eslint/js';
 import perfectionist from 'eslint-plugin-perfectionist';
+
+/*
+Workaround for this error
+
+```
+Oops! Something went wrong! :(
+
+ESLint: 9.38.0
+
+TypeError: Key "languageOptions": allowTrailingCommas option is only available in JSONC.
+```
+*/
+const omit = (property, {[property]: _, ...object}) => object;
+
+const xoPlugin = _xoPluginOriginal.map(config =>
+	config.languageOptions?.allowTrailingCommas
+		? {...config, languageOptions: omit('allowTrailingCommas', config.languageOptions)}
+		: config,
+);
+
+
+const xoTsPlugin = _xoTsPluginOriginal.map(config =>
+	config.languageOptions?.allowTrailingCommas
+		? {...config, languageOptions: omit('allowTrailingCommas', config.languageOptions)}
+		: config,
+);
+
+/*
+Workaround for this error
+
+```
+TypeError: Error while loading rule 'no-irregular-whitespace': sourceCode.getAllComments is not a function
+```
+*/
+const xoTsFiltered = xoTsPlugin.filter(
+  (config) => !config.language?.startsWith('json/')
+);
+
+const xoFiltered = xoPlugin.filter(
+  (config) => !config.language?.startsWith('json/')
+);
 
 const allOurSelectors = [
   'function',
@@ -144,6 +185,7 @@ const getNamingConventionRule = ({ isTsx }) => ({
 
 export default [
   {
+    name: 'options',
     languageOptions: {
       globals: {
         document: 'readonly',
@@ -175,16 +217,27 @@ export default [
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   {
+    name: 'eslint-comments',
     plugins: { 'eslint-comments': eslintCommentsPlugin },
     rules: eslintCommentsPlugin.configs.recommended.rules,
   },
   promisePlugin.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended,
   unicornPlugin.configs.recommended,
-  ...xoPlugin,
-  ...xoTsPlugin,
-  ...xoBrowser,
   {
+    name: 'xo',
+    extends: xoFiltered,
+  },
+  {
+    name: 'xo-ts',
+    extends: xoTsFiltered,
+  },
+  {
+    name: 'xo-browser',
+    extends: xoBrowser,
+  },
+  {
+    name: 'react',
     plugins: { react: reactPlugin },
     settings: {
       react: {
@@ -196,12 +249,21 @@ export default [
       ...reactPlugin.configs['jsx-runtime'].rules,
     },
   },
-  reactHooksPlugin.configs['recommended-latest'],
+  {
+    name: 'react-hooks',
+    plugins: { 'react-hooks': reactHooksPlugin },
+    rules: reactHooksPlugin.configs['recommended-latest'].rules,
+  },
   ...tanstackQueryPlugin.configs['flat/recommended'],
   jsxA11yPlugin.flatConfigs.recommended,
   sonarjsPlugin.configs.recommended,
-  regexpPlugin.configs['flat/recommended'],
   {
+    name: 'regexp',
+    plugins: regexpPlugin.configs['flat/recommended'].plugins,
+    rules: regexpPlugin.configs['flat/recommended'].rules,
+  },
+  {
+    name: 'jest',
     files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
     plugins: {
       jest: jestPlugin,
@@ -247,9 +309,14 @@ export default [
       "testing-library/prefer-user-event-setup": 'error',
     },
   },
-  perfectionist.configs['recommended-alphabetical'],
   prettierPlugin,
   {
+    name: 'perfectionist',
+    plugins: perfectionist.configs['recommended-alphabetical'].plugins,
+    rules: perfectionist.configs['recommended-alphabetical'].rules,
+  },
+  {
+    name: 'overrides',
     rules: {
       'no-array-constructor': 'off',
       '@typescript-eslint/no-array-constructor': 'warn',
@@ -513,7 +580,7 @@ export default [
       'promise/no-multiple-resolved': 'error',
       'promise/prefer-catch': 'error',
 
-      'import/enforce-node-protocol-usage': 'error',
+      'import/enforce-node-protocol-usage': ['error', 'always'],
       'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
       'import/newline-after-import': 'warn',
       'import/no-amd': 'error',
@@ -704,6 +771,7 @@ export default [
     },
   },
   {
+    name: 'ui-restricted-imports',
     files: ['src/**/ui/**/*.[jt]s?(x)', 'App.tsx'],
     rules: {
       '@typescript-eslint/no-restricted-imports': [
@@ -725,6 +793,7 @@ export default [
     },
   },
   {
+    name: 'tsx-naming-convention',
     files: ['**/*.tsx'],
     rules: {
       ...getNamingConventionRule({ isTsx: true }),

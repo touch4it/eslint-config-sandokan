@@ -44,6 +44,13 @@ const xoTsPlugin = _xoTsPluginOriginal.map(config =>
 		: config,
 );
 
+/*
+Workaround for this error
+
+```
+TypeError: Error while loading rule 'no-irregular-whitespace': sourceCode.getAllComments is not a function
+```
+*/
 const xoTsFiltered = xoTsPlugin.filter(
   (config) => !config.language?.startsWith('json/')
 );

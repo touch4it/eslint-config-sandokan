@@ -385,6 +385,19 @@ export default [
       '@typescript-eslint/padding-line-between-statements': 'off',
       '@typescript-eslint/no-import-type-side-effects': 'error',
 
+      '@typescript-eslint/only-throw-error': [
+        'error',
+        {
+          allow: [
+            {
+              from: 'package',
+              package: '@tanstack/router-core',
+              name: 'Redirect',
+            },
+          ],
+        },
+      ],
+
       camelcase: 'off',
       'no-async-promise-executor': 'error',
       'no-param-reassign': 'error',

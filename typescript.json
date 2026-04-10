@@ -3,16 +3,14 @@
   "compilerOptions": {
     "noUncheckedIndexedAccess": true,
     "target": "es2022",
-    "lib": ["dom", "dom.iterable", "es2022"],
+    "lib": ["dom", "es2022"],
     "allowJs": true,
     "checkJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -21,7 +19,6 @@
     "assumeChangesOnlyAffectDirectDependencies": true,
     "typeRoots": ["node_modules/@types"],
     "allowUnreachableCode": false,
-    "downlevelIteration": true,
     "importHelpers": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -34,7 +31,6 @@
     "strictNullChecks": true,
     "useDefineForClassFields": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noUncheckedSideEffectImports": true
+    "noUnusedParameters": true
   }
 }

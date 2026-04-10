@@ -6,7 +6,6 @@
     "url": "https://github.com/touch4it/eslint-config-sandokan.git"
   },
   "author": "Tibor The Mad Programmer <tibor.hanesz@gmail.com>",
-  "maintainer": "Roman Páleník <roman.palenik@touch4it.com>",
   "main": "index.mjs",
   "files": [
     "index.js",
@@ -15,8 +14,8 @@
   ],
   "dependencies": {
     "@tanstack/eslint-plugin-query": "5.91.3",
-    "@typescript-eslint/eslint-plugin": "8.53.1",
-    "@typescript-eslint/parser": "8.53.1",
+    "@typescript-eslint/eslint-plugin": "8.58.1",
+    "@typescript-eslint/parser": "8.58.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-xo": "0.49.0",
     "eslint-config-xo-typescript": "9.0.0",
@@ -43,5 +42,6 @@
   },
   "engines": {
     "node": ">=24.0.0"
-  }
+  },
+  "maintainer": "Roman Páleník <roman.palenik@touch4it.com>"
 }

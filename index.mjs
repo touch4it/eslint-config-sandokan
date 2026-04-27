@@ -1,5 +1,5 @@
 import tseslint from 'typescript-eslint';
-import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
+import eslintCommentsPlugin from '@eslint-community/eslint-plugin-eslint-comments';
 import promisePlugin from 'eslint-plugin-promise';
 import importPlugin from 'eslint-plugin-import';
 import unicornPlugin from 'eslint-plugin-unicorn';

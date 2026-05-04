@@ -1,7 +1,7 @@
 import tseslint from 'typescript-eslint';
 import eslintCommentsPlugin from '@eslint-community/eslint-plugin-eslint-comments';
 import promisePlugin from 'eslint-plugin-promise';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import xoPluginOriginal from 'eslint-config-xo';
 import xoTsPluginOriginal from 'eslint-config-xo-typescript';
@@ -343,7 +343,6 @@ export default [
       'prefer-destructuring': 'off',
       '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
       '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'warn',
-      '@typescript-eslint/sort-type-constituents': 'warn',
       '@typescript-eslint/strict-void-return': 'error',
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
@@ -588,18 +587,16 @@ export default [
       'promise/no-multiple-resolved': 'error',
       'promise/prefer-catch': 'error',
 
-      'import/enforce-node-protocol-usage': ['error', 'always'],
-      'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
-      'import/newline-after-import': 'warn',
-      'import/no-amd': 'error',
-      'import/no-anonymous-default-export': 'warn',
-      'import/no-empty-named-blocks': 'error',
-      'import/no-unresolved': 'off',
-      'import/no-webpack-loader-syntax': 'error',
-      'import/no-namespace': 'warn',
+      'import-x/newline-after-import': 'warn',
+      'import-x/no-amd': 'error',
+      'import-x/no-anonymous-default-export': 'warn',
+      'import-x/no-empty-named-blocks': 'error',
+      'import-x/no-unresolved': 'off',
+      'import-x/no-webpack-loader-syntax': 'error',
+      'import-x/no-namespace': 'warn',
       // off because its in conflict with @typescript-eslint/no-import-type-side-effects
-      'import/consistent-type-specifier-style': 'off',
-      'import/order': [
+      'import-x/consistent-type-specifier-style': 'off',
+      'import-x/order': [
         'error',
         {
           groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
@@ -638,6 +635,7 @@ export default [
           ignore: ['param', 'Params', 'err', 'props', 'i18n', 'ref', 'Ref'],
         },
       ],
+      'unicorn/prefer-node-protocol': ['error'],
 
       'react/hook-use-state': ['error', { allowDestructuredState: true }],
       'react/self-closing-comp': [
@@ -737,14 +735,16 @@ export default [
       '@typescript-eslint/no-unnecessary-type-parameters': 'off',
       '@typescript-eslint/no-restricted-types': 'off',
 
-      'import/default': 'off',
+      'import-x/default': 'off',
       '@typescript-eslint/consistent-type-exports': 'off',
       'prefer-arrow-callback': 'off',
 
       '@typescript-eslint/no-empty-object-type': 'error',
       '@typescript-eslint/no-unsafe-function-type': 'error',
-      'import/no-named-as-default': 'off',
-      'import/no-named-as-default-member': 'off',
+      'import-x/no-named-as-default': 'off',
+      'import-x/no-named-as-default-member': 'off',
+      // Rule is for checking if imports exists, for that we typescript
+      'import-x/named': 'off',
 
       'sonarjs/redundant-type-aliases': 'off',
       'sonarjs/todo-tag': 'off',
@@ -764,7 +764,7 @@ export default [
       // Auto fix not working in this package and conflicts with `perfectionist`
       '@typescript-eslint/member-ordering': 'off',
 
-      // turning this off because import is sorted by rule import/order
+      // turning this off because import is sorted by rule import-x/order
       'perfectionist/sort-imports': 'off',
       'perfectionist/sort-named-imports': 'off',
       'perfectionist/sort-objects': [

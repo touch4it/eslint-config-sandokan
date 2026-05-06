@@ -6,22 +6,31 @@
     "url": "https://github.com/touch4it/eslint-config-sandokan.git"
   },
   "author": "Tibor The Mad Programmer <tibor.hanesz@gmail.com>",
-  "main": "index.mjs",
+  "exports": {
+    "./react": "./react.mjs",
+    "./angular": "./angular.mjs",
+    "./prettier": "./prettier/index.cjs",
+    "./typescript": "./typescript.json"
+  },
   "files": [
-    "index.js",
+    "react.mjs",
+    "angular.mjs",
     "prettier",
     "typescript.json"
   ],
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.7.1",
+    "@eslint/js": "9.39.4",
     "@tanstack/eslint-plugin-query": "5.91.3",
     "@typescript-eslint/eslint-plugin": "8.58.1",
     "@typescript-eslint/parser": "8.58.1",
+    "angular-eslint": "21.2.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-xo": "0.49.0",
     "eslint-config-xo-typescript": "9.0.0",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jest": "29.12.1",
+    "eslint-plugin-jsdoc": "62.5.4",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-perfectionist": "5.4.0",
     "eslint-plugin-prettier": "5.5.5",
@@ -33,6 +42,7 @@
     "eslint-plugin-sort-destructure-keys": "2.0.0",
     "eslint-plugin-testing-library": "7.15.4",
     "eslint-plugin-unicorn": "62.0.0",
+    "eslint-plugin-unused-imports": "4.4.1",
     "prettier": "3.8.1",
     "prettier-plugin-curly": "0.4.1",
     "prettier-plugin-packagejson": "3.0.0"

@@ -212,8 +212,8 @@ export default [
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   {
-    name: 'eslint-comments',
-    plugins: { 'eslint-comments': eslintCommentsPlugin },
+    name: '@eslint-community/eslint-plugin-eslint-comments',
+    plugins: { '@eslint-community/eslint-comments': eslintCommentsPlugin },
     rules: eslintCommentsPlugin.configs.recommended.rules,
   },
   promisePlugin.configs['flat/recommended'],
@@ -583,7 +583,7 @@ export default [
       'getter-return': 'warn',
       'sort-imports': ['warn', { ignoreDeclarationSort: true }],
 
-      'eslint-comments/require-description': 'warn',
+      '@eslint-community/eslint-comments/require-description': 'warn',
 
       'promise/no-multiple-resolved': 'error',
       'promise/prefer-catch': 'error',

@@ -61,7 +61,7 @@ export default defineConfig([
           'newlines-between': 'always',
         },
       ],
-      // Rule is for checking if imports exists, for that we typescript
+      // Rule is for checking if imports exists, for that we have typescript
       'import-x/named': 'off',
 
       'unused-imports/no-unused-imports': 'error',

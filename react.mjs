@@ -743,7 +743,7 @@ export default [
       '@typescript-eslint/no-unsafe-function-type': 'error',
       'import-x/no-named-as-default': 'off',
       'import-x/no-named-as-default-member': 'off',
-      // Rule is for checking if imports exists, for that we typescript
+      // Rule is for checking if imports exists, for that we have typescript
       'import-x/named': 'off',
 
       'sonarjs/redundant-type-aliases': 'off',

@@ -4,7 +4,7 @@ import angular from 'angular-eslint';
 import jsdoc from 'eslint-plugin-jsdoc';
 import prettierPluginRecommended from 'eslint-plugin-prettier/recommended';
 import tsEslint from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 
 export default defineConfig([
@@ -21,7 +21,7 @@ export default defineConfig([
       jsdoc.configs['flat/recommended'],
     ],
     plugins: {
-      import: importPlugin,
+      'import-x': importPlugin,
       'unused-imports': unusedImportsPlugin,
     },
     rules: {
@@ -52,8 +52,8 @@ export default defineConfig([
       'no-unused-vars': 'off',
       curly: ['error', 'all'],
 
-      'import/no-duplicates': ['error', { 'prefer-inline': true }],
-      'import/order': [
+      'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
+      'import-x/order': [
         'error',
         {
           pathGroups: [{ pattern: '~/**', group: 'internal' }],
@@ -61,6 +61,8 @@ export default defineConfig([
           'newlines-between': 'always',
         },
       ],
+      // Rule is for checking if imports exists, for that we have typescript
+      'import-x/named': 'off',
 
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
@@ -79,9 +81,6 @@ export default defineConfig([
   {
     name: 'templates',
     files: ['**/*.html'],
-    extends: [
-      angular.configs.templateRecommended,
-      angular.configs.templateAccessibility,
-    ],
+    extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
   },
 ]);

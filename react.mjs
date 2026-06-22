@@ -9,7 +9,7 @@ import xoBrowser from 'eslint-config-xo/browser';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import tanstackQueryPlugin from '@tanstack/eslint-plugin-query';
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y-x';
 import sonarjsPlugin from 'eslint-plugin-sonarjs';
 import regexpPlugin from 'eslint-plugin-regexp';
 import jestPlugin from 'eslint-plugin-jest';
@@ -250,7 +250,7 @@ export default [
     rules: reactHooksPlugin.configs['recommended-latest'].rules,
   },
   ...tanstackQueryPlugin.configs['flat/recommended'],
-  jsxA11yPlugin.flatConfigs.recommended,
+  jsxA11yPlugin.configs.recommended,
   sonarjsPlugin.configs.recommended,
   {
     name: 'regexp',
@@ -699,16 +699,16 @@ export default [
         },
       ],
 
-      'jsx-a11y/alt-text': 'warn',
-      'jsx-a11y/anchor-is-valid': 'warn',
-      'jsx-a11y/iframe-has-title': 'warn',
-      'jsx-a11y/img-redundant-alt': 'warn',
-      'jsx-a11y/no-access-key': 'warn',
-      'jsx-a11y/no-aria-hidden-on-focusable': 'error',
-      'jsx-a11y/no-redundant-roles': 'warn',
-      'jsx-a11y/prefer-tag-over-role': 'error',
-      'jsx-a11y/role-has-required-aria-props': 'warn',
-      'jsx-a11y/role-supports-aria-props': 'warn',
+      'jsx-a11y-x/alt-text': 'warn',
+      'jsx-a11y-x/anchor-is-valid': 'warn',
+      'jsx-a11y-x/iframe-has-title': 'warn',
+      'jsx-a11y-x/img-redundant-alt': 'warn',
+      'jsx-a11y-x/no-access-key': 'warn',
+      'jsx-a11y-x/no-aria-hidden-on-focusable': 'error',
+      'jsx-a11y-x/no-redundant-roles': 'warn',
+      'jsx-a11y-x/prefer-tag-over-role': 'error',
+      'jsx-a11y-x/role-has-required-aria-props': 'warn',
+      'jsx-a11y-x/role-supports-aria-props': 'warn',
 
       'prettier/prettier': ['error'],
 

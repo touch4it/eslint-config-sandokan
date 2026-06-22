@@ -17,6 +17,7 @@ import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import eslint from '@eslint/js';
 import perfectionist from 'eslint-plugin-perfectionist';
+import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
 
 /*
 Workaround for this error
@@ -252,6 +253,7 @@ export default [
   ...tanstackQueryPlugin.configs['flat/recommended'],
   jsxA11yPlugin.flatConfigs.recommended,
   sonarjsPlugin.configs.recommended,
+  reactYouMightNotNeedAnEffect.configs.recommended,
   {
     name: 'regexp',
     plugins: regexpPlugin.configs['flat/recommended'].plugins,

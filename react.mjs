@@ -699,16 +699,8 @@ export default [
         },
       ],
 
-      'jsx-a11y-x/alt-text': 'warn',
-      'jsx-a11y-x/anchor-is-valid': 'warn',
-      'jsx-a11y-x/iframe-has-title': 'warn',
-      'jsx-a11y-x/img-redundant-alt': 'warn',
-      'jsx-a11y-x/no-access-key': 'warn',
       'jsx-a11y-x/no-aria-hidden-on-focusable': 'error',
-      'jsx-a11y-x/no-redundant-roles': 'warn',
       'jsx-a11y-x/prefer-tag-over-role': 'error',
-      'jsx-a11y-x/role-has-required-aria-props': 'warn',
-      'jsx-a11y-x/role-supports-aria-props': 'warn',
 
       'prettier/prettier': ['error'],
 

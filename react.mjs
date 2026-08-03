@@ -348,6 +348,7 @@ export default [
       '@typescript-eslint/strict-void-return': 'error',
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
+      '@tanstack/query/prefer-query-options': 'error',
       'no-restricted-imports': 'off',
       '@typescript-eslint/no-restricted-imports': [
         'error',

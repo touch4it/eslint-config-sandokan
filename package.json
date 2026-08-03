@@ -24,7 +24,7 @@
     "@tanstack/eslint-plugin-query": "5.101.2",
     "@typescript-eslint/eslint-plugin": "8.62.1",
     "@typescript-eslint/parser": "8.62.1",
-    "angular-eslint": "21.2.0",
+    "angular-eslint": "22.1.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-xo": "0.49.0",
     "eslint-config-xo-typescript": "9.0.0",

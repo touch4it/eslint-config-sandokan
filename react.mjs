@@ -774,6 +774,16 @@ export default [
       ],
       '@typescript-eslint/sort-type-constituents': 'off',
 
+      'perfectionist/sort-arrays': [
+        'error',
+        {
+          useConfigurationIf: {
+            matchesAstSelector: 'TSAsExpression[typeAnnotation.typeName.name=const] > ArrayExpression',
+          },
+          type: 'alphabetical',
+        },
+      ],
+
       'promise/spec-only': 'error',
 
       '@typescript-eslint/switch-exhaustiveness-check': [

@@ -349,8 +349,9 @@ export default [
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
       '@tanstack/query/prefer-query-options': 'error',
-      'no-restricted-imports': 'off',
-      '@typescript-eslint/no-restricted-imports': [
+      // Deprecated since typescript-eslint 8.64.0, replaced by core no-restricted-imports which supports TypeScript.
+      '@typescript-eslint/no-restricted-imports': 'off',
+      'no-restricted-imports': [
         'error',
         {
           paths: [
@@ -458,6 +459,8 @@ export default [
       ],
       'no-lone-blocks': 'warn',
       'no-loop-func': 'warn',
+      // Deprecated since typescript-eslint 8.64.0, replaced by core no-loop-func which supports TypeScript.
+      '@typescript-eslint/no-loop-func': 'off',
       'no-multi-str': 'warn',
       'no-native-reassign': 'warn',
       'no-negated-in-lhs': 'warn',
@@ -751,6 +754,10 @@ export default [
       'sonarjs/elseif-without-else': 'error',
       'sonarjs/deprecation': 'off',
       'sonarjs/no-nested-conditional': 'off',
+      'sonarjs/prefer-native-axios-alternative': 'off',
+      'sonarjs/prefer-native-lodash-alternative': 'off',
+      // Removed from sonarjs recommended in 4.1.0, enabled to keep commented-out code out of the codebase.
+      'sonarjs/no-commented-code': 'error',
 
       '@typescript-eslint/no-unsafe-type-assertion': ['error'],
 
@@ -798,7 +805,7 @@ export default [
     name: 'ui-restricted-imports',
     files: ['src/**/ui/**/*.[jt]s?(x)', 'App.tsx'],
     rules: {
-      '@typescript-eslint/no-restricted-imports': [
+      'no-restricted-imports': [
         'error',
         {
           paths: [

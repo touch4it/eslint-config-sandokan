@@ -43,7 +43,6 @@
         "no-constant-condition": "error",
         "no-control-regex": "error",
         "no-debugger": "error",
-        "no-delete-var": "error",
         "no-dupe-else-if": "error",
         "no-duplicate-case": "error",
         "no-empty": "error",
@@ -52,7 +51,6 @@
         "no-empty-static-block": "error",
         "no-ex-assign": "error",
         "no-extra-boolean-cast": "error",
-        "no-fallthrough": "error",
         "no-global-assign": "error",
         "no-invalid-regexp": "error",
         "no-irregular-whitespace": "error",
@@ -66,15 +64,12 @@
         "no-sparse-arrays": "error",
         "no-unexpected-multiline": "error",
         "no-unsafe-finally": "error",
-        "no-unsafe-optional-chaining": "error",
         "no-unused-labels": "error",
-        "no-unused-private-class-members": "error",
         "no-useless-backreference": "error",
         "no-useless-catch": "error",
         "no-useless-escape": "error",
         "require-yield": "error",
         "use-isnan": "error",
-        "valid-typeof": "error",
         "no-var": "error",
         "prefer-const": "error",
         "prefer-rest-params": "error",
@@ -166,7 +161,11 @@
             "varsIgnorePattern": "^_",
             "argsIgnorePattern": "^_",
             "caughtErrorsIgnorePattern": "^(_|err)$",
-            "destructuredArrayIgnorePattern": "^_"
+            "destructuredArrayIgnorePattern": "^_",
+            "fix": {
+              "imports": "safe-fix",
+              "variables": "off"
+            }
           }
         ]
       }

@@ -1,5 +1,7 @@
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
 
+import jsxNoLeakedRender from './jsx-no-leaked-render.mjs';
+
 const originalRule = typescriptEslintPlugin.rules['naming-convention'];
 
 const parserServices = {
@@ -11,6 +13,7 @@ const parserServices = {
 export default {
   meta: { name: 'sandokan' },
   rules: {
+    'jsx-no-leaked-render': jsxNoLeakedRender,
     'naming-convention': {
       meta: originalRule.meta,
       create(context) {

@@ -6,6 +6,9 @@
     "url": "https://github.com/touch4it/eslint-config-sandokan.git"
   },
   "author": "Tibor The Mad Programmer <tibor.hanesz@gmail.com>",
+  "scripts": {
+    "test": "node --test"
+  },
   "exports": {
     "./react/oxlint": "./react/oxlintrc.json",
     "./react/oxfmt": "./react/oxfmt.config.mjs",
@@ -22,25 +25,24 @@
   ],
   "dependencies": {
     "@angular-eslint/eslint-plugin": "22.1.0",
-    "@eslint-community/eslint-plugin-eslint-comments": "4.7.2",
     "@tanstack/eslint-plugin-query": "5.104.4",
     "@typescript-eslint/eslint-plugin": "8.62.1",
     "angular-eslint": "22.1.0",
+    "eslint": "10.15.0",
     "eslint-plugin-oxfmt": "0.33.0",
     "eslint-plugin-perfectionist": "5.9.1",
-    "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-you-might-not-need-an-effect": "1.0.2",
+    "eslint-plugin-regexp": "3.1.1",
     "eslint-plugin-testing-library": "7.16.2",
     "eslint-plugin-unicorn": "62.0.0"
   },
   "peerDependencies": {
-    "eslint": ">=9.39.2",
     "oxfmt": ">=0.78.0",
-    "oxlint": ">=1.93.0",
-    "oxlint-tsgolint": ">=7.0.2007"
+    "oxlint": ">=1.94.0",
+    "tsrs": "0.25.0-ts7.1.0-beta"
   },
   "peerDependenciesMeta": {
-    "oxlint-tsgolint": {
+    "tsrs": {
       "optional": true
     }
   },

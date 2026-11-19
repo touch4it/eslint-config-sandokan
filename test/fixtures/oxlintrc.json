@@ -1,0 +1,6 @@
+{
+  "plugins": [],
+  "jsPlugins": ["../../react/plugins/sandokan.mjs"],
+  "categories": { "correctness": "off" },
+  "rules": { "sandokan/jsx-no-leaked-render": "error" }
+}

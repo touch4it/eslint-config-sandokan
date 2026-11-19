@@ -19,6 +19,7 @@
     "assumeChangesOnlyAffectDirectDependencies": true,
     "typeRoots": ["node_modules/@types"],
     "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
     "importHelpers": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
